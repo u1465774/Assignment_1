@@ -12,13 +12,18 @@
           th:href="@{/css/bootstrap.min.css}"
           rel="stylesheet" media="screen" />
     <script src="../../static/js/jquery.min.js"
+<<<<<<< HEAD
             th:src="@{/js/jquery.min.js}"></script>
+=======
+    th:src="@{/js/jquery.min.js}"></script>
+>>>>>>> 9fa015fd5af7fd4ac8079492f2d825755a0a5801
 
     <!--<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"-->
     <!--th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"-->
     <!--rel="stylesheet" media="screen" />-->
 
     <!--<script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.1/jquery.min.js"-->
+<<<<<<< HEAD
     <!--th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>-->
 </head>
 <body>
@@ -33,5 +38,21 @@
         <div th:include="fragments/footer :: footer"/>
     </div>
 </div>
+=======
+            <!--th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>-->
+</head>
+<body>
+    <div class="full-height">
+        <div th:include="fragments/header :: header"/>
+
+        <div class="container content-height">
+            <div th:include="this :: content"/>
+        </div>
+
+        <div class="content">
+            <div th:include="fragments/footer :: footer"/>
+        </div>
+    </div>
+>>>>>>> 9fa015fd5af7fd4ac8079492f2d825755a0a5801
 </body>
 </html>

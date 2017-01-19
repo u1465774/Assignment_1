@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 /**
+<<<<<<< HEAD
  * Created by Luke Hardman on 15/12/16.
+=======
+ * Created by Louie Qin on 15/12/16.
+>>>>>>> 9fa015fd5af7fd4ac8079492f2d825755a0a5801
  */
 @Controller
 public class NoteController {
