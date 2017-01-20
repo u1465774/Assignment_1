@@ -8,11 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
-<<<<<<< HEAD
  * Created by Luke Hardman on 01/12/16.
-=======
- * Created by Louie Qin on 01/12/16.
->>>>>>> 9fa015fd5af7fd4ac8079492f2d825755a0a5801
  */
 @Service
 public class CardService {

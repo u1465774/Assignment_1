@@ -14,18 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 /**
-<<<<<<< HEAD
  * Created by Luke Hardman on 15/12/16.
-=======
- * Created by Louie Qin on 15/12/16.
->>>>>>> 9fa015fd5af7fd4ac8079492f2d825755a0a5801
  */
 @Controller
 public class CardController {
     @Autowired
     protected CardService cardService;
 
-    // /without /card i wont be sent to this page.
+    // This will create a new card and add it to the database
     @RequestMapping(value = "/create/card", method = RequestMethod.POST)
     public String createCard(Model model, @Valid @ModelAttribute("card") Card card, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
@@ -46,7 +42,7 @@ public class CardController {
 
         return "cards";
     }
-
+    // This will delete a card which is in the database called card
     @RequestMapping(value = "/delete/card/{card}", method = RequestMethod.GET)
     public String deleteCard(Model model, @PathVariable Card card){
         cardService.delete(card);

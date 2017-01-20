@@ -79,6 +79,7 @@
         </ol>
     </div>
 
+    <div th:if="${type != null}" th:replace="fragments/alert :: alert (type=${type}, message=${message})"/>
     <!--<div th:replace="fragments/alert :: alert (type='info', message='Info message example')"/>-->
     <!--<div th:replace="fragments/alert :: alert (type='warning', message='Warning message example')"/>-->
     <!--<div th:replace="fragments/alert :: alert (type='success', message='Success message example')"/>-->
