@@ -19,27 +19,29 @@
             th:src="@{/js/jquery.min.js}"></script>
 </head>
 
-
-<!-- The below content will replace the <div th:include="this :: content"/> part of layouts/layout.html -->
 <div th:fragment="content">
-    <div class="hero-unit">
-        <p>
-            <a href="https://github.com/yongruiQ/demo-spring-database.git" class="btn btn-large btn-success">GitHub Project for this demo</a>
+    <h3>Card Creation and Display.</h3>
+
+    <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <h1>Login</h1>
+        <!-- add new text box -->
+        <p>Username: <input type="text" th:field="*{username}"/>
+            <br>
+            Password: <input type="text" th:field="*{password}"/>
+            </br>
         </p>
-    </div>
-    <div>
-        <h1>Luxury Car</h1>
-        <br><p>
-            A place for luxury car fanatics to talk and boast about a wide variety of cars.
-        </p>
 
-        <img src="/images/audi.jpg" />
-        </br>
+        <!--<a href="#" th:href="@{/index/}"><span th:text="Welcome"></span></a>-->
+        <p><input type="submit" value="Submit" /></p>
+    </form>
 
-
-        <br> Feel free to leave comments and read about cars which to experts and fanatics own around the world.</br>
-
-    </div>
 </div>
 
 </html>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "www.yoursite.com";
+    };
+</script>
