@@ -34,52 +34,52 @@
     </form>
 
 
-    <table border="1">
+    <table style="width:80%" border="1">
         <thead>
         <tr>
-            <th th:width="60px">ID</th>
-            <th th:width="150px">Name of Car</th>
-            <th th:width="150px">Production Year</th>
-            <th th:width="80px">Price</th>
-            <th th:width="60px">Remove</th>
+            <th style="text-align:center" th:width="60px">ID</th>
+            <th style="text-align:center" th:width="150px">Name of Car</th>
+            <th style="text-align:center" th:width="150px">Production Year</th>
+            <th style="text-align:center" th:width="150px">Price</th>
+            <th style="text-align:center" th:width="75px">Remove</th>
 
         </tr>
         </thead>
         <tbody>
         <tr th:each="card : ${cards}">
-            <td>
+            <td style="text-align:center">
                 <span th:text="${card.id}"></span>
             </td>
-            <td>
+            <td style="text-align:center">
                 <a href="#" th:href="@{/note/}+${card.id}"><span th:text="${card.title}"></span></a>
                 <!--  <span th:text="${card.title}"></span> -->
             </td>
-            <td>
+            <td style="text-align:center">
                 <span th:text="${card.year}"></span>
             </td>
-            <td>
+            <td style="text-align:center">
                 <span th:text="${card.price}"></span>
             </td>
-            <td>
-                <a href="#" th:href="@{/delete/card/}+${card.id}" class="pull-right">delete</a>
+            <td style="text-align:center">
+                <a href="#" th:href="@{/delete/card/}+${card.id}" class="center">delete</a>
             </td>
 
         </tr>
         </tbody>
     </table>
 
-    <div class="form-group">
-        <ol class="list-group">
-            <li class="list-group-item list-group-item-info" th:each="card : ${cards}">
+    <!--<div class="form-group">-->
+        <!--<ol class="list-group">-->
+            <!--<li class="list-group-item list-group-item-info" th:each="card : ${cards}">-->
 
 
-                <a href="#" th:href="@{/note/}+${card.id}"> Name of Car: <span th:text="${card.title}"></span> Production Year: <span th:text="${card.year}"></span></a>
-                <a href="#" th:href="@{/delete/card/}+${card.id}" class="pull-right">delete</a>
-            </li>
-        </ol>
-    </div>
+                <!--<a href="#" th:href="@{/note/}+${card.id}"> Name of Car: <span th:text="${card.title}"></span> Production Year: <span th:text="${card.year}"></span></a>-->
+                <!--<a href="#" th:href="@{/delete/card/}+${card.id}" class="pull-right">delete</a>-->
+            <!--</li>-->
+        <!--</ol>-->
+    <!--</div>-->
 
-    <div th:if="${type != null}" th:replace="fragments/alert :: alert (type=${type}, message=${message})"/>
+    <!--<div th:if="${type != null}" th:replace="fragments/alert :: alert (type=${type}, message=${message})"/>-->
     <!--<div th:replace="fragments/alert :: alert (type='info', message='Info message example')"/>-->
     <!--<div th:replace="fragments/alert :: alert (type='warning', message='Warning message example')"/>-->
     <!--<div th:replace="fragments/alert :: alert (type='success', message='Success message example')"/>-->

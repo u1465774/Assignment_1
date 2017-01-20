@@ -24,7 +24,7 @@ public class LoginController {
     @Autowired
     protected UserService userService;
 
-    // This will create a new login and add it to the database
+    // This will allow information to be saved to the database
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String createLogin(Model model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -43,6 +43,7 @@ public class LoginController {
         model.addAttribute("type", "success");
         model.addAttribute("message", "A new login has been created.");
 
+        // Sends user to the index page when submit button is clicked
         return "index";
     }
 

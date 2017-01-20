@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DemoController {
 
+    // Sends user to the index page when basic localhost is used without anything else
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(){
         return "index";
     }
 
+    // Sends user to the /json page is its used in the searchbar
     @RequestMapping(value = "/json", method = RequestMethod.GET)
     @ResponseBody
     public Card json(){
