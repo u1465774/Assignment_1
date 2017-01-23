@@ -21,10 +21,11 @@ public class CardController {
     @Autowired
     protected CardService cardService;
 
-    // This will create a new card and add it to the database
+    // checks if theres an error
     @RequestMapping(value = "/create/card", method = RequestMethod.POST)
     public String createCard(Model model, @Valid @ModelAttribute("card") Card card, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
+            //
             model.addAttribute("card", card);
             model.addAttribute("cards", cardService.findAll());
             model.addAttribute("type", "danger");
@@ -32,8 +33,10 @@ public class CardController {
             return "cards";
         }
 
+        // adds the card to the database
         cardService.save(card);
 
+        // returns the cards
         model.addAttribute("card", new Card());
         model.addAttribute("cards", cardService.findAll());
 

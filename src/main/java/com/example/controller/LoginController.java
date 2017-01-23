@@ -24,7 +24,7 @@ public class LoginController {
     @Autowired
     protected UserService userService;
 
-    // This will allow information to be saved to the database
+    // checks if theres an error
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String createLogin(Model model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -35,6 +35,7 @@ public class LoginController {
             return "login";
         }
 
+        // adds the card to the database
         userService.save(user);
 
         model.addAttribute("user", new User());

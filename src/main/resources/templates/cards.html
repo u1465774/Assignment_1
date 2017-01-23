@@ -34,6 +34,7 @@
     </form>
 
 
+    <!-- creates a table where information will be displayed -->
     <table style="width:80%" border="1">
         <thead>
         <tr>
@@ -67,23 +68,6 @@
         </tr>
         </tbody>
     </table>
-
-    <!--<div class="form-group">-->
-        <!--<ol class="list-group">-->
-            <!--<li class="list-group-item list-group-item-info" th:each="card : ${cards}">-->
-
-
-                <!--<a href="#" th:href="@{/note/}+${card.id}"> Name of Car: <span th:text="${card.title}"></span> Production Year: <span th:text="${card.year}"></span></a>-->
-                <!--<a href="#" th:href="@{/delete/card/}+${card.id}" class="pull-right">delete</a>-->
-            <!--</li>-->
-        <!--</ol>-->
-    <!--</div>-->
-
-    <!--<div th:if="${type != null}" th:replace="fragments/alert :: alert (type=${type}, message=${message})"/>-->
-    <!--<div th:replace="fragments/alert :: alert (type='info', message='Info message example')"/>-->
-    <!--<div th:replace="fragments/alert :: alert (type='warning', message='Warning message example')"/>-->
-    <!--<div th:replace="fragments/alert :: alert (type='success', message='Success message example')"/>-->
-    <!--<div th:replace="fragments/alert :: alert (type='danger', message=${errorMessage})"/>-->
 </div>
 
 </html>

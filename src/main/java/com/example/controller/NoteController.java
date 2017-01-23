@@ -25,6 +25,8 @@ public class NoteController {
     @Autowired
     protected NoteService noteService;
 
+
+    // checks if theres an error
     @RequestMapping(value = "/create/note/{card}", method = RequestMethod.POST)
     public String createNote(Model model, @PathVariable Card card, @Valid @ModelAttribute("note") Note note, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
@@ -36,8 +38,11 @@ public class NoteController {
             return "notes";
         }
 
+        // creates a note
         noteService.save(note);
+        // adds the note
         card.getNotes().add(note);
+        // saves the card
         cardService.save(card);
 
         model.addAttribute("note", new Note());
@@ -47,6 +52,7 @@ public class NoteController {
         model.addAttribute("type", "success");
         model.addAttribute("message", "A new note has been created.");
 
+        // return to notes page
         return "notes";
     }
 
@@ -59,6 +65,7 @@ public class NoteController {
             return "note.edit";
         }
 
+        // updates the note
         noteService.save(note);
 
         model.addAttribute("card", card);
@@ -67,9 +74,11 @@ public class NoteController {
         model.addAttribute("type", "success");
         model.addAttribute("message", "The note has been updated.");
 
+        // return to note.edit page
         return "note.edit";
     }
 
+    // edits the note
     @RequestMapping(value = "/edit/note/{card}/{note}", method = RequestMethod.GET)
     public String editNoteView(Model model, @PathVariable Card card, @PathVariable Note note){
         model.addAttribute("card", card);
@@ -85,6 +94,7 @@ public class NoteController {
         return "notes";
     }
 
+    // deletes the note
     @RequestMapping(value = "/delete/note/{card}/{note}", method = RequestMethod.GET)
     public String deleteCard(Model model, @PathVariable Card card, @PathVariable Note note){
         card.getNotes().remove(note);
